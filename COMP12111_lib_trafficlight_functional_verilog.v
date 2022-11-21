@@ -35,24 +35,24 @@ reg [3:0] state, next_statae;	// internal state variables
 
 always@ (*)
 	case(state)
-		4b'0000:	if(start)	next_statae = 4b'0001;	//s0
-					else		next_statae = 4b'0000;
+		4'b0000:	if(start)	next_statae = 4'b0001;	//s0
+					else		next_statae = 4'b0000;
 
-		4b'0001:	next_statae = 4b'0002;		//s1
-		4b'0010:	next_statae = 4b'0003;		//s2
-		4b'0011:	next_statae = 4b'0004;		//s3
-		4b'0100:	next_statae = 4b'0005;		//s4
+		4'b0001:	next_statae = 4'b0002;		//s1
+		4'b0010:	next_statae = 4'b0003;		//s2
+		4'b0011:	next_statae = 4'b0004;		//s3
+		4'b0100:	next_statae = 4'b0005;		//s4
 
-		4b'0101:	if(start)	next_statae = 4b'1000;	//s5
-					else		next_statae = 4b'0110;
-		4b'0110:	if(start)	next_statae = 4b'1001;	//s6
-					else		next_statae = 4b'0111;
-		4b'0111:	if(start)	next_statae = 4b'1010;	//s7
-					else		next_statae = 4b'1000;
+		4'b0101:	if(start)	next_statae = 4'b1000;	//s5
+					else		next_statae = 4'b0110;
+		4'b0110:	if(start)	next_statae = 4'b1001;	//s6
+					else		next_statae = 4'b0111;
+		4'b0111:	if(start)	next_statae = 4'b1010;	//s7
+					else		next_statae = 4'b1000;
 
-		4b'1000:	next_statae = 4b'1001;		//s8
-		4b'1001:	next_statae = 4b'1010;		//s9
-		4b'1010:	next_statae = 4b'0001;		//s10
+		4'b1000:	next_statae = 4'b1001;		//s8
+		4'b1001:	next_statae = 4'b1010;		//s9
+		4'b1010:	next_statae = 4'b0001;		//s10
 
 		
 
@@ -70,17 +70,17 @@ end
 
 always@ (*)
 	case(state)
-		4b'0000:	lightseq = 5b'01001;		//s0
-		4b'0001:	lightseq = 5b'10100;		//s1
-		4b'0010:	lightseq = 5b'10100;		//s2
-		4b'0011:	lightseq = 5b'10100;		//s3
-		4b'0100:	lightseq = 5b'01001;		//s4
-		4b'0101:	lightseq = 5b'01110;		//s5
-		4b'0110:	lightseq = 5b'01001;		//s6
-		4b'0111:	lightseq = 5b'01001;		//s7
-		4b'1000:	lightseq = 5b'01001;		//s8
-		4b'1001:	lightseq = 5b'01001;		//s9
-		4b'1010:	lightseq = 5b'01001;		//s10
+		4'b0000:	lightseq = 5'b01001;		//s0
+		4'b0001:	lightseq = 5'b10100;		//s1
+		4'b0010:	lightseq = 5'b10100;		//s2
+		4'b0011:	lightseq = 5'b10100;		//s3
+		4'b0100:	lightseq = 5'b01001;		//s4
+		4'b0101:	lightseq = 5'b01110;		//s5
+		4'b0110:	lightseq = 5'b01001;		//s6
+		4'b0111:	lightseq = 5'b01001;		//s7
+		4'b1000:	lightseq = 5'b01001;		//s8
+		4'b1001:	lightseq = 5'b01001;		//s9
+		4'b1010:	lightseq = 5'b01001;		//s10
 	endcase
 
 
