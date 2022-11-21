@@ -19,7 +19,7 @@ $stop;      tells the simulator to stop
 initial clock = 0;
 always
 	begin
-	#50
+	#20
 	clock = ~clock;
 	end
 
@@ -31,77 +31,47 @@ begin
 
 // Set input signals here, using delays where appropriate
 // -----------------------------------------------------
-reset = 0;
-clock = 0;
-start = 0;
-#1010
-reset = 1;
-#100
-reset = 0;
-#100
+reset = 0; clock = 0; start = 0;
+#405 reset = 1;
+#40 reset = 0;
 
-// 0,1,2,3,4,5,6,7,0 states
-start = 1;
-#100
-start = 0;
-#800
+// first times
+#160 start = 1;
+#40 start = 0;
+#400 reset = 1;
+#40 reset = 0;
 
-reset = 1;
-#100
-reset = 0;
-#100
 
-// 0,1,2,3,4,5,8,9,10,1,2,3,4,5,6,7,0 statas
-start = 1;
-#100
-start = 0;
+// 2st times
+#160 start = 1;
+#40 start = 0;
+#160 start = 1;
+#40 start = 0;
+#400 reset = 1;
+#40 reset = 0;
+
+// 3st times
+#160 start = 1;
+#40 start = 0;
+#200 start = 1;
+#40 start = 0;
+#400 reset = 1;
+#40 reset = 0;
+
+// 4st times
+#160 start = 1;
+#40 start = 0;
+#240 start = 1;
+#40 start = 0;
+#400 reset = 1;
+#40 reset = 0;
+
+// 5st times
+#160 start = 1;
+#40 start = 0;
+#120 reset = 1;
+#40 reset = 0;
 #400
-start = 1;
-#100
-start = 0;
-#1000
-
-reset = 1;
-#100
-reset = 0;
-#100
-
-// 0,1,2,3,4,5,6,9,10,1,2,3,4,5,6,7,0 statas
-start = 1;
-#100
-start = 0;
-#500
-start = 1;
-#100
-start = 0;
-#900
-
-reset = 1;
-#100
-reset = 0;
-#100
-
-// 0,1,2,3,4,5,6,7,10,1,2,3,4,5,6,7,0 statas
-start = 1;
-#100
-start = 0;
-#600
-start = 1;
-#100
-start = 0;
-#800
-
-//text reset
-start = 1;
-#100
-start = 0;
-#300
-
-
-reset = 1;
-#100
-reset = 0;
-#500
 
 $stop;
 end
